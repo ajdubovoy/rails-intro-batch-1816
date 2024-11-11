@@ -1,0 +1,24 @@
+<h1>Contact Us</h1>
+
+<h2>Meet the team</h2>
+
+<form action="/contact" method="GET">
+  <label for="search">Who do you want to contact?</label>
+  <input
+  type="text"
+  id="search"
+  name="search"
+  value=<%= @user_search %>
+  placeholder="Claire, Toni, or someone else">
+  <input type="submit">
+</form>
+
+<p>You searched for: <%= @user_search %></p>
+
+<ol>
+  <% @members.each do |member| %>
+    <li><%= member.capitalize %></li>
+  <% end %>
+</ol>
+
+<%= link_to "Learn more about us", about_path %>
